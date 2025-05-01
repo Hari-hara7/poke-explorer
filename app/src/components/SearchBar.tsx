@@ -1,19 +1,13 @@
-interface Props {
-    search: string;
-    setSearch: (search: string) => void;
-  }
-  
-  const SearchBar = ({ search, setSearch }: Props) => {
-    return (
-      <input
-        type="text"
-        placeholder="Search Pokémon"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-        className="border rounded px-4 py-2 w-full mb-4"
-      />
-    );
-  };
-  
-  export default SearchBar;
-  
+import React from 'react';
+
+const SearchBar = ({ search, setSearch }: { search: string; setSearch: (s: string) => void }) => (
+  <input
+    type="text"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+    placeholder="Search Pokémon..."
+    className="w-full p-2 mb-4 border rounded"
+  />
+);
+
+export default SearchBar;

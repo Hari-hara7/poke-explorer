@@ -1,25 +1,37 @@
-interface Props {
-    types: string[];
-    selectedType: string;
-    setSelectedType: (type: string) => void;
-  }
-  
-  const TypeFilter = ({ types, selectedType, setSelectedType }: Props) => {
-    return (
-      <select
-        value={selectedType}
-        onChange={(e) => setSelectedType(e.target.value)}
-        className="border rounded px-4 py-2 w-full mb-4"
-      >
-        <option value="">All Types</option>
-        {types.map((type) => (
-          <option key={type} value={type}>
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </option>
-        ))}
-      </select>
+import React from 'react';
+
+const TypeFilter = ({
+  types,
+  selectedTypes,
+  setSelectedTypes,
+}: {
+  types: string[];
+  selectedTypes: string[];
+  setSelectedTypes: (types: string[]) => void;
+}) => {
+  const toggleType = (type: string) => {
+    setSelectedTypes(
+      selectedTypes.includes(type)
+        ? selectedTypes.filter((t) => t !== type)
+        : [...selectedTypes, type]
     );
   };
-  
-  export default TypeFilter;
-  
+
+  return (
+    <div className="flex flex-wrap gap-2 mb-4">
+      {types.map((type) => (
+        <button
+          key={type}
+          className={`px-3 py-1 rounded-full border ${
+            selectedTypes.includes(type) ? 'bg-blue-500 text-white' : 'bg-gray-200'
+          }`}
+          onClick={() => toggleType(type)}
+        >
+          {type}
+        </button>
+      ))}
+    </div>
+  );
+};
+
+export default TypeFilter;

@@ -1,10 +1,10 @@
-const Header = () => {
-    return (
-      <header className="bg-blue-500 text-white py-4 text-center text-2xl font-bold">
-        Pokémon Explorer
-      </header>
-    )
-  }
-  
-  export default Header;
-  
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+const Header = () => (
+  <header className="p-4 bg-white-600 text-black text-center text-2xl font-bold">
+    <Link to="/">Pokédex</Link>
+  </header>
+);
+
+export default Header;
