@@ -1,6 +1,6 @@
 # Pokémon Explorer
 
-A React application that allows users to explore and search Pokémon, view their details, add them to favorites, and compare their stats.
+A React application that allows users to explore and search Pokémon, view their details, add them to favorites, and compare their stats.ssssg
 
 ## Features
 - Search for Pokémon by name
