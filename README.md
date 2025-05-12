@@ -20,7 +20,7 @@ A React application that allows users to explore and search Pokémon, view their
 
 
 
-## Deployment
+## Deployment test
 
 This app is hosted on [Vercel](https://vercel.com).
 
